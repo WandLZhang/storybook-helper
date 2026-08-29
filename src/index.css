@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+/* The reader is a fixed, non-scrolling surface: the page text scrolls inside its own box, the
+   shell never rubber-bands. overscroll-behavior stops a swipe turning into a pull-to-refresh. */
+html, body {
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+body { font-family: ui-sans-serif, system-ui, -apple-system, "Noto Sans HK", sans-serif; }
+
+/* Both phonetic fonts need generous leading — the romanization is drawn ABOVE the glyph, inside
+   the line box, so a normal line-height clips it. */
+.zh-yue { font-family: 'VF-Canto', system-ui, sans-serif; line-height: 1.5; font-weight: 400; }
+.zh-cmn { font-family: 'Hanzi-Pinyin', system-ui, sans-serif; line-height: 1.45; font-weight: 400; }
+
+/* Release the horizontal axis to the app across the WHOLE page area, descendants included.
+   Setting touch-action only on the drag layer was not enough: the text sits inside a vertical
+   scroll container, which defaults to touch-action:auto, so the browser claimed both axes there
+   and swallowed the swipe. Only touches near the screen edge — outside that scroller — reached
+   the drag handler, which is why page turns appeared to need an edge swipe. */
+.swipe-zone, .swipe-zone * { touch-action: pan-y; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

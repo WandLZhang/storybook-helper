@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-HK" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>Storybook</title>
+    <style>
+      /* Cantonese: canto.hk VF-Canto draws jyutping above each character via OpenType.
+         Mandarin: Hanzi-Pinyin does the same with pinyin. Both OFL, same files cloud-claude uses. */
+      @font-face { font-family: 'VF-Canto'; src: url('/fonts/VF-Canto-HKEdB.woff2') format('woff2'); font-display: swap; font-weight: 400; }
+      @font-face { font-family: 'Hanzi-Pinyin'; src: url('/fonts/Hanzi-Pinyin-Font.top.woff2') format('woff2'); font-display: swap; font-weight: 400; }
+      html, body, #root { height: 100%; margin: 0; background: #0a0a0b; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.firebase/
+*.log
+.DS_Store
+
+# Firebase web config carries an AIza* key — never in a public repo.
+# Copy firebase.config.example.ts to firebase.config.ts and fill it in.
+src/services/firebase.config.ts
+
+# The Visual Font is 16.6 MB (or a generated subset). Fetched/built, not committed.
+public/fonts/*.woff2
+
+# TypeScript incremental build state
+*.tsbuildinfo
