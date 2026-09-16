@@ -14,7 +14,7 @@
  *   2. otherwise compose it per character (佛 fat6 + 珠 zyu1) — closes 65% of the gap
  *   3. otherwise the Mandarin reading, explicitly LABELLED as Mandarin
  */
-const DICT_URL = 'https://storage.googleapis.com/wz-qwen-test-canto-dict/canto-dict.min.json'
+const DICT_URL = 'https://storage.googleapis.com/wz-canto-dict/canto-dict.min.json'
 const MAX_WORD = 6 // forward-maximum-match window
 
 interface RawEntry {
